@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Assistant</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Assistant" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Smart daily planner</p>
+        <h1>Personal Assistant</h1>
+        <p class="subtitle">Tasks, appointments, reminders and focus timer in one mobile app.</p>
+      </div>
+      <div class="today-box">
+        <span id="todayName">Today</span>
+        <strong id="todayDate">--</strong>
+      </div>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span>Total</span><strong id="statTotal">0</strong></article>
+      <article class="stat-card"><span>Today</span><strong id="statToday">0</strong></article>
+      <article class="stat-card"><span>Overdue</span><strong id="statOverdue">0</strong></article>
+      <article class="stat-card"><span>Done</span><strong id="statDone">0</strong></article>
+    </section>
+
+    <nav class="tabs" aria-label="App tabs">
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="tasks">Tasks</button>
+      <button class="tab" data-tab="appointments">Rendez-vous</button>
+      <button class="tab" data-tab="focus">Focus</button>
+    </nav>
+
+    <main>
+      <section id="dashboard" class="panel active-panel">
+        <div class="card">
+          <div class="card-title-row">
+            <h2>Today agenda</h2>
+            <button class="secondary" id="notifyBtn">Enable reminders</button>
+          </div>
+          <div id="todayAgenda" class="list empty-state">No items for today.</div>
+        </div>
+        <div class="card">
+          <h2>Next reminders</h2>
+          <div id="upcomingList" class="list empty-state">No upcoming reminders.</div>
+        </div>
+      </section>
+
+      <section id="tasks" class="panel">
+        <div class="card">
+          <h2>Add task</h2>
+          <form id="taskForm" class="form-grid">
+            <input id="taskTitle" type="text" placeholder="Task title" required />
+            <select id="taskPriority">
+              <option value="Normal">Normal</option>
+              <option value="Urgent">Urgent</option>
+              <option value="Low">Low</option>
+            </select>
+            <input id="taskDate" type="datetime-local" required />
+            <textarea id="taskNote" placeholder="Note optional"></textarea>
+            <button type="submit">Add task</button>
+          </form>
+        </div>
+        <div class="card">
+          <div class="card-title-row">
+            <h2>All tasks</h2>
+            <select id="filterStatus">
+              <option value="all">All</option>
+              <option value="pending">Pending</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div id="taskList" class="list empty-state">No tasks yet.</div>
+        </div>
+      </section>
+
+      <section id="appointments" class="panel">
+        <div class="card">
+          <h2>Add rendez-vous</h2>
+          <form id="appointmentForm" class="form-grid">
+            <input id="apptTitle" type="text" placeholder="Rendez-vous title" required />
+            <input id="apptLocation" type="text" placeholder="Location optional" />
+            <input id="apptDate" type="datetime-local" required />
+            <select id="apptReminder">
+              <option value="0">At time</option>
+              <option value="10">10 minutes before</option>
+              <option value="30">30 minutes before</option>
+              <option value="60">1 hour before</option>
+              <option value="1440">1 day before</option>
+            </select>
+            <textarea id="apptNote" placeholder="Note optional"></textarea>
+            <button type="submit">Add rendez-vous</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2>All rendez-vous</h2>
+          <div id="appointmentList" class="list empty-state">No appointments yet.</div>
+        </div>
+      </section>
+
+      <section id="focus" class="panel">
+        <div class="card focus-card">
+          <h2>Focus timer</h2>
+          <p>25 minutes work + 5 minutes break.</p>
+          <div id="timer">25:00</div>
+          <div class="timer-actions">
+            <button id="startTimer">Start</button>
+            <button class="secondary" id="pauseTimer">Pause</button>
+            <button class="danger" id="resetTimer">Reset</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Created by admin CMH9</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

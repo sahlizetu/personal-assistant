@@ -1,0 +1,26 @@
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --primary:#4f46e5;
+  --primary-dark:#3730a3;
+  --border:#e5e7eb;
+  --danger:#ef4444;
+  --success:#16a34a;
+  --warning:#f59e0b;
+  --shadow:0 14px 35px rgba(17,24,39,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 30%);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh;padding:18px}
+.app-shell{max-width:920px;margin:0 auto}
+.hero{display:flex;justify-content:space-between;gap:14px;align-items:stretch;background:var(--primary);color:white;border-radius:26px;padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.85;margin:0 0 8px}
+h1{margin:0;font-size:34px;line-height:1.05}.subtitle{margin:8px 0 0;opacity:.9;max-width:540px}.today-box{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:16px;min-width:150px;display:flex;flex-direction:column;justify-content:center;text-align:center}.today-box span{font-size:13px;opacity:.85}.today-box strong{font-size:18px;margin-top:4px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.stat-card span{color:var(--muted);font-size:13px}.stat-card strong{display:block;font-size:28px;margin-top:4px;color:var(--primary)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:white;border:1px solid var(--border);border-radius:18px;padding:8px;margin-bottom:16px;position:sticky;top:8px;z-index:10}.tab{background:transparent;color:var(--muted);border:0;border-radius:12px;padding:12px;font-weight:700;cursor:pointer}.tab.active{background:var(--primary);color:white}
+.panel{display:none}.active-panel{display:block}.card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:var(--shadow);margin-bottom:16px}h2{margin:0 0 14px;font-size:20px}.card-title-row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.form-grid{display:grid;grid-template-columns:1fr 180px;gap:10px}.form-grid textarea{grid-column:1/-1;min-height:80px;resize:vertical}input,select,textarea,button{font:inherit;border-radius:14px;border:1px solid var(--border);padding:13px 14px}input:focus,select:focus,textarea:focus{outline:3px solid rgba(79,70,229,.15);border-color:var(--primary)}button{background:var(--primary);color:white;border:0;font-weight:800;cursor:pointer}button:hover{filter:brightness(.96)}.secondary{background:#eef2ff;color:var(--primary)}.danger{background:var(--danger);color:white}
+.list{display:flex;flex-direction:column;gap:10px}.empty-state{color:var(--muted);font-size:14px}.item{border:1px solid var(--border);background:#fbfdff;border-radius:16px;padding:14px;display:grid;gap:8px}.item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.item-title{font-weight:800}.item-meta{color:var(--muted);font-size:13px;display:flex;gap:8px;flex-wrap:wrap}.badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:800;background:#eef2ff;color:var(--primary)}.badge.urgent{background:#fee2e2;color:#b91c1c}.badge.low{background:#dcfce7;color:#166534}.badge.overdue{background:#fef3c7;color:#92400e}.item-actions{display:flex;gap:8px;flex-wrap:wrap}.item-actions button{padding:9px 11px;font-size:13px}.done .item-title{text-decoration:line-through;color:var(--muted)}.done{opacity:.75}
+.focus-card{text-align:center}.focus-card p{color:var(--muted);margin-top:-8px}#timer{font-size:64px;font-weight:900;color:var(--primary);margin:22px 0}.timer-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+footer{text-align:center;color:var(--muted);padding:22px;font-size:13px}
+@media(max-width:700px){body{padding:12px}.hero{flex-direction:column}h1{font-size:30px}.stats-grid{grid-template-columns:repeat(2,1fr)}.tabs{grid-template-columns:repeat(2,1fr);position:static}.form-grid{grid-template-columns:1fr}.timer-actions{grid-template-columns:1fr}button{width:100%}}
